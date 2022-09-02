@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/AnaMendozaP/cypress-training#readme",
   "devDependencies": {
-    "cypress": "^10.7.0"
+    "cypress": "^10.7.0",
+    "typescript": "^4.8.2"
   }
 }
