@@ -24,6 +24,14 @@
   },
   "homepage": "https://github.com/AnaMendozaP/cypress-training#readme",
   "devDependencies": {
-    "cypress": "^10.7.0"
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "cypress": "^10.7.0",
+    "eslint": "^8.23.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-standard-with-typescript": "^22.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.5",
+    "eslint-plugin-promise": "^6.0.1",
+    "typescript": "^4.8.2"
   }
 }
