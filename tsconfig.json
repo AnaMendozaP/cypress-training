@@ -9,4 +9,4 @@
     "include": ["cypress/**/*.ts", "cypress.config.ts"],
     "exclude": ["node_modules/"]
 
-}
+ }

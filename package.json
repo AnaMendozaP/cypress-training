@@ -24,7 +24,7 @@
     "url": "https://github.com/AnaMendozaP/cypress-training/issues"
   },
   "homepage": "https://github.com/AnaMendozaP/cypress-training#readme",
-  "devDependencies": {
+ "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "cypress": "^10.7.0",
     "eslint": "^8.23.0",
