@@ -8,5 +8,9 @@
     },
     "include": ["cypress/**/*.ts", "cypress.config.ts"],
     "exclude": ["node_modules/"]
+<<<<<<< HEAD
 
 }
+=======
+  }
+>>>>>>> 8d97dedd43570d24c8d9569e28ff215a5a7d37ae
