@@ -10,7 +10,7 @@ class LoginPage {
 
     }
 
-    public signInPage(email: string, password: string): void {
+    public signIn(email: string, password: string): void {
         cy.get(this.loginEmailInput).type(email);
         cy.get(this.loginPasswordInput).type(password);
         cy.get(this.loginPageButton).click();

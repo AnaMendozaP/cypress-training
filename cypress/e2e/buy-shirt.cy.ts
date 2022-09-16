@@ -11,7 +11,7 @@ import {
 const menuContentPage = new MenuContentPage();
 const productListPage = new ProductListPage();
 const shoppingToCart = new ShoppingCartPage();
-const signIn = new LoginPage();
+const signInPage = new LoginPage();
 const addresStepPage = new AddressStepPage();
 const shippingStepPage = new ShippingStepPage();
 const paymentStepPage = new PaymentStepPage();
@@ -22,12 +22,13 @@ describe("Buy a t-shirt", () => {
     menuContentPage.goToTShirtMenu();
     productListPage.addToCart();
     shoppingToCart.proceedToCheckout();
-    signIn.signInPage("aperdomobo@gmail.com", "WorkshopProtractor");
+    signInPage.signIn("aperdomobo@gmail.com", "WorkshopProtractor");
     addresStepPage.addressCheckout();
     shippingStepPage.agreeTerms();
     shippingStepPage.shippingCheck();
     paymentStepPage.selectBankWire();
     paymentStepPage.confirmOrder();
-    paymentStepPage.getConfirmationMessage();
+    paymentStepPage.getConfirmationMessage().should(
+      "have.text","Your order on My Store is complete.");
   });
 });
