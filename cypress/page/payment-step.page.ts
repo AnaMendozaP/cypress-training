@@ -1,20 +1,25 @@
 class PaymentStepPage {
-    private bankWireClick: string;
+    private bankWire: string;
     private proceedToPayClick: string;
     private messagePaymentComplete: string;
 
     constructor() {
-        this.bankWireClick = ".bankwire";
+        this.bankWire = ".bankwire";
         this.proceedToPayClick = "#cart_navigation > .button > span";
         this.messagePaymentComplete = "#center_column > div > p > strong";
 
     }
 
-    public paymentSuccessfully(): void {
-            cy.get(this.bankWireClick).click();
+    public selectBankWire(): void {
+            cy.get(this.bankWire).click();              
+    }
+
+    public confirmOrder(): void {
             cy.get(this.proceedToPayClick).click();
-            cy.get(this.messagePaymentComplete).should(
-                  "have.text","Your order on My Store is complete.");
+    }
+
+    public getConfirmationMessage() {
+            return cy.get(this.messagePaymentComplete);
     }
 }
 
