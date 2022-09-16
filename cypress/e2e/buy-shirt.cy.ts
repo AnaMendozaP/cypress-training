@@ -1,29 +1,28 @@
+import {MenuContentPage} from "../page/index";
+import {ProductListPage} from "../page/index";
+import {ShoppingCartPage} from "../page/index";
+import {LoginPage} from "../page/index";
+import {AddressStepPage} from "../page/index";
+import {ShippingStepPage} from "../page/index";
+import {PaymentStepPage} from "../page/index";
+
+const menuContentPage = new MenuContentPage();
+const productListPage = new ProductListPage();
+const shoppingToCart = new ShoppingCartPage();
+const loginPage = new LoginPage();
+const addresStepPage = new AddressStepPage();
+const shippingStepPage = new ShippingStepPage();
+const paymentStepPage = new PaymentStepPage();
+
 describe("Buy a t-shirt", () => {
   it("then the t-shirt should be bought", () => {
-    cy.visit("http://automationpractice.com/");
-    cy.get("#block_top_menu > ul > li:nth-child(3) > a").click();
-    cy.get(
-        "#center_column a.button.ajax_add_to_cart_button.btn.btn-default",
-    ).click();
-    cy.waitUntil(function() {
-      return cy.get("[style*='display: block;'] .button-container > a", {timeout: 10000}).should("be.visible");
-    });
-    cy.get("[style*='display: block;'] .button-container > a").click();
-    cy.get(".cart_navigation span").click();
-
-    cy.get("#email").type("aperdomobo@gmail.com");
-    cy.get("#passwd").type("WorkshopProtractor");
-
-    cy.get("[id=\"SubmitLogin\"]").click();
-    cy.get(".cart_navigation > .button > span").click();
-    cy.get("#cgv").check();
-    cy.get(".cart_navigation > .button > span").click();
-    cy.get(".bankwire").click();
-    cy.get("#cart_navigation > .button > span").click();
-
-    cy.get("#center_column > div > p > strong").should(
-        "have.text",
-        "Your order on My Store is complete.",
-    );
+    menuContentPage.visitMenuContentPage();
+    menuContentPage.goToTShirtMenu();
+    productListPage.addToCart();
+    shoppingToCart.proceedToCheckout();
+    loginPage.logginPageSignIn();
+    addresStepPage.addressCheckout();
+    shippingStepPage.addressCheckout();
+    paymentStepPage.paymentSuccessfully();
   });
 });
