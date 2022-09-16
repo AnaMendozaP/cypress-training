@@ -10,9 +10,9 @@ class LoginPage {
 
     }
 
-    public logginPageSignIn(): void {
-        cy.get(this.loginEmailInput).type("aperdomobo@gmail.com");
-        cy.get(this.loginPasswordInput).type("WorkshopProtractor");
+    public signInPage(email: string, password: string): void {
+        cy.get(this.loginEmailInput).type(email);
+        cy.get(this.loginPasswordInput).type(password);
         cy.get(this.loginPageButton).click();
     }
 }

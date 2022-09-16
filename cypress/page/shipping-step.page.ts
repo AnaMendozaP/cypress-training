@@ -1,17 +1,20 @@
 class ShippingStepPage {
-    private addressContinueCheckout: string;
+    private shippingContinueCheck: string;
     private agreeTermsCheck: string;
 
     constructor() {
-        this.addressContinueCheckout = ".cart_navigation > .button > span";
+        this.shippingContinueCheck = ".cart_navigation > .button > span";
         this.agreeTermsCheck = "#cgv";
 
     }
 
-    public addressCheckout(): void {
+    public agreeTerms(): void {
             cy.get(this.agreeTermsCheck).check();
-            cy.get(this.addressContinueCheckout).click();
     }
+
+    public shippingCheck(): void {
+        cy.get(this.shippingContinueCheck).click();
+    } 
 }
 
 export { ShippingStepPage }
